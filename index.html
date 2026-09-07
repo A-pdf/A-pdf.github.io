@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A-PDF — Free Online PDF Tools</title>
+  <meta name="description" content="A-PDF by Appexio. Free, fast and private PDF tools to edit, merge, split, convert and organize PDFs.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="#" class="logo">
+      <img src="logo.png" alt="A-PDF Logo" class="logo-image">
+     <span>A-PDF</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#tools">All Tools</a>
+      <a href="#organize">Organize</a>
+      <a href="#convert">Convert</a>
+      <a href="#edit">Edit</a>
+    </nav>
+
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+      <div class="hero-badge">
+        <i class="fa-solid fa-shield-halved"></i>
+        Free & Privacy Focused
+      </div>
+
+      <h1>Every PDF tool you need.<br><span>Completely free.</span></h1>
+
+      <p>
+        Edit, organize, convert and manage your PDF files directly from your browser.
+        Fast, simple and built for everyone.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#tools" class="btn btn-primary">
+          Explore Tools <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a href="#editor" class="btn btn-secondary">
+          <i class="fa-solid fa-pen-to-square"></i>
+          Edit PDF
+        </a>
+      </div>
+
+      <div class="trust-row">
+        <span><i class="fa-solid fa-lock"></i> Private Processing</span>
+        <span><i class="fa-solid fa-bolt"></i> Fast</span>
+        <span><i class="fa-solid fa-user"></i> No Account Required</span>
+      </div>
+    </section>
+
+
+    <!-- FEATURED EDITOR -->
+    <section class="featured" id="editor">
+
+      <div class="featured-content">
+        <div class="section-tag">MOST POWERFUL TOOL</div>
+
+        <h2>Edit PDFs like never before.</h2>
+
+        <p>
+          Add text, images, signatures, drawings and annotations to your PDF.
+          Everything happens directly in your browser.
+        </p>
+
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Add images anywhere</li>
+          <li><i class="fa-solid fa-check"></i> Add & edit text</li>
+          <li><i class="fa-solid fa-check"></i> Draw & annotate</li>
+          <li><i class="fa-solid fa-check"></i> Add signatures</li>
+        </ul>
+
+        <button class="btn btn-primary tool-button" data-tool="editor">
+          Open PDF Editor
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="editor-preview">
+        <div class="fake-window">
+          <div class="window-top">
+            <span></span><span></span><span></span>
+          </div>
+
+          <div class="fake-toolbar">
+            <i class="fa-solid fa-font"></i>
+            <i class="fa-solid fa-image"></i>
+            <i class="fa-solid fa-pen"></i>
+            <i class="fa-solid fa-signature"></i>
+          </div>
+
+          <div class="fake-paper">
+            <div class="paper-title"></div>
+            <div class="paper-line"></div>
+            <div class="paper-line short"></div>
+            <div class="fake-image"></div>
+            <div class="paper-line"></div>
+            <div class="paper-line medium"></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ALL TOOLS -->
+    <section class="tools-section" id="tools">
+
+      <div class="section-heading">
+        <div>
+          <div class="section-tag">A-PDF TOOLBOX</div>
+          <h2>All PDF tools</h2>
+        </div>
+
+        <p>Everything you need to work with PDF documents.</p>
+      </div>
+
+
+      <!-- ORGANIZE -->
+      <div class="tool-category" id="organize">
+        <h3><i class="fa-solid fa-layer-group"></i> Organize PDF</h3>
+
+        <div class="tools-grid">
+
+          <button class="tool-card" data-tool="merge">
+            <div class="tool-icon blue"><i class="fa-solid fa-object-group"></i></div>
+            <h4>Merge PDF</h4>
+            <p>Combine multiple PDFs into one file.</p>
+          </button>
+
+          <button class="tool-card" data-tool="split">
+            <div class="tool-icon purple"><i class="fa-solid fa-scissors"></i></div>
+            <h4>Split PDF</h4>
+            <p>Split pages into separate PDF files.</p>
+          </button>
+
+          <button class="tool-card" data-tool="organize">
+            <div class="tool-icon orange"><i class="fa-solid fa-table-cells"></i></div>
+            <h4>Organize Pages</h4>
+            <p>Reorder, delete and manage pages.</p>
+          </button>
+
+          <button class="tool-card" data-tool="rotate">
+            <div class="tool-icon green"><i class="fa-solid fa-rotate"></i></div>
+            <h4>Rotate PDF</h4>
+            <p>Rotate PDF pages easily.</p>
+          </button>
+
+          <button class="tool-card" data-tool="extract">
+            <div class="tool-icon pink"><i class="fa-solid fa-file-export"></i></div>
+            <h4>Extract Pages</h4>
+            <p>Extract selected pages from a PDF.</p>
+          </button>
+
+          <button class="tool-card" data-tool="delete">
+            <div class="tool-icon red"><i class="fa-solid fa-trash"></i></div>
+            <h4>Delete Pages</h4>
+            <p>Remove unwanted pages.</p>
+          </button>
+
+        </div>
+      </div>
+
+
+      <!-- CONVERT -->
+      <div class="tool-category" id="convert">
+        <h3><i class="fa-solid fa-arrows-rotate"></i> Convert</h3>
+
+        <div class="tools-grid">
+
+          <button class="tool-card" data-tool="images-to-pdf">
+            <div class="tool-icon blue"><i class="fa-solid fa-image"></i></div>
+            <h4>Image to PDF</h4>
+            <p>Convert JPG, PNG and images to PDF.</p>
+          </button>
+
+          <button class="tool-card" data-tool="pdf-to-image">
+            <div class="tool-icon purple"><i class="fa-solid fa-file-image"></i></div>
+            <h4>PDF to Image</h4>
+            <p>Convert PDF pages into images.</p>
+          </button>
+
+          <button class="tool-card" data-tool="extract-images">
+            <div class="tool-icon orange"><i class="fa-solid fa-images"></i></div>
+            <h4>Extract Images</h4>
+            <p>Extract images from PDF files.</p>
+          </button>
+
+          <button class="tool-card" data-tool="metadata">
+            <div class="tool-icon green"><i class="fa-solid fa-circle-info"></i></div>
+            <h4>PDF Information</h4>
+            <p>View PDF properties and information.</p>
+          </button>
+
+        </div>
+      </div>
+
+
+      <!-- EDIT -->
+      <div class="tool-category" id="edit">
+        <h3><i class="fa-solid fa-pen-ruler"></i> Edit & Enhance</h3>
+
+        <div class="tools-grid">
+
+          <button class="tool-card" data-tool="watermark">
+            <div class="tool-icon blue"><i class="fa-solid fa-droplet"></i></div>
+            <h4>Add Watermark</h4>
+            <p>Add text watermarks to PDFs.</p>
+          </button>
+
+          <button class="tool-card" data-tool="page-numbers">
+            <div class="tool-icon purple"><i class="fa-solid fa-list-ol"></i></div>
+            <h4>Page Numbers</h4>
+            <p>Add page numbers automatically.</p>
+          </button>
+
+          <button class="tool-card" data-tool="sign">
+            <div class="tool-icon green"><i class="fa-solid fa-signature"></i></div>
+            <h4>Sign PDF</h4>
+            <p>Create and add your signature.</p>
+          </button>
+
+          <button class="tool-card" data-tool="compress">
+            <div class="tool-icon orange"><i class="fa-solid fa-compress"></i></div>
+            <h4>Compress PDF</h4>
+            <p>Reduce PDF file size.</p>
+          </button>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- PRIVACY -->
+    <section class="privacy">
+
+      <div class="privacy-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+
+      <h2>Your files stay yours.</h2>
+
+      <p>
+        A-PDF is designed with privacy in mind. Core tools process files
+        directly inside your browser whenever possible.
+      </p>
+
+      <div class="privacy-items">
+        <div>
+          <i class="fa-solid fa-lock"></i>
+          <span>Private Processing</span>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-user-slash"></i>
+          <span>No Account Required</span>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-cloud-arrow-down"></i>
+          <span>No Forced Uploads</span>
+        </div>
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-brand">
+      <div class="logo">
+        <img src="logo.png" alt="A-PDF Logo" class="logo-image">
+     <span>A-PDF</span>
+      </div>
+
+      <p>Powerful PDF tools by Appexio.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 A-PDF. All rights reserved.</span>
+      <span>Built by Appexio</span>
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>A-PDF — Appexio-PDF</title>
+
+    <link rel="stylesheet" href="tool.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- pdf-lib -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+</head>
+
+<body>
+
+<!-- =========================================================
+     APP HEADER
+========================================================= -->
+
+<header class="tool-navbar">
+
+    <div class="brand-area">
+
+        <a href="index.html" class="brand-link">
+
+            <img
+                src="assets/logo.png"
+                alt="A-PDF"
+                class="brand-logo"
+            >
+
+            <div class="brand-text">
+                <strong>A-PDF</strong>
+                <span>Appexio-PDF</span>
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <div class="header-center">
+
+        <span id="toolTitle">
+            PDF Tool
+        </span>
+
+    </div>
+
+
+    <div class="header-actions">
+
+        <button
+            id="headerZoomOut"
+            class="header-button"
+            title="Zoom out"
+        >
+            <i class="fa-solid fa-minus"></i>
+        </button>
+
+        <span id="zoomText">
+            100%
+        </span>
+
+        <button
+            id="headerZoomIn"
+            class="header-button"
+            title="Zoom in"
+        >
+            <i class="fa-solid fa-plus"></i>
+        </button>
+
+        <button
+            id="fitPageBtn"
+            class="header-button fit-button"
+        >
+            Fit
+        </button>
+
+        <button
+            id="downloadBtn"
+            class="download-button"
+        >
+            <i class="fa-solid fa-download"></i>
+            Download
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     LOADING SCREEN
+========================================================= -->
+
+<section
+    id="loadingScreen"
+    class="loading-screen hidden"
+>
+
+    <div class="loading-card">
+
+        <div class="loading-logo">
+            <i class="fa-solid fa-file-pdf"></i>
+        </div>
+
+        <h2 id="loadingTitle">
+            Opening PDF
+        </h2>
+
+        <p id="loadingMessage">
+            Preparing your document...
+        </p>
+
+        <div class="progress-track">
+
+            <div
+                id="progressBar"
+                class="progress-bar"
+            ></div>
+
+        </div>
+
+        <div class="progress-info">
+
+            <strong id="progressPercent">
+                0%
+            </strong>
+
+            <span id="progressDetail">
+                Starting...
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     START SCREEN
+========================================================= -->
+
+<section
+    id="startScreen"
+    class="start-screen"
+>
+
+    <div class="start-card">
+
+        <div class="start-icon">
+            <i class="fa-solid fa-file-pdf"></i>
+        </div>
+
+        <h1 id="startTitle">
+            Open a PDF
+        </h1>
+
+        <p id="startDescription">
+            Select a PDF from your device to begin.
+        </p>
+
+        <label class="primary-upload-button">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+            Choose PDF
+
+            <input
+                type="file"
+                id="pdfInput"
+                accept="application/pdf,.pdf"
+                hidden
+            >
+
+        </label>
+
+        <div class="privacy-note">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Your files are processed in your browser.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PDF EDITOR
+========================================================= -->
+
+<section
+    id="editorWorkspace"
+    class="editor-workspace hidden"
+>
+
+    <!-- LEFT SIDEBAR -->
+
+    <aside class="pages-sidebar">
+
+        <div class="sidebar-top">
+
+            <div>
+                <strong>Pages</strong>
+
+                <span id="sidebarPageCount">
+                    0 pages
+                </span>
+            </div>
+
+            <button
+                id="selectAllPages"
+                class="small-button"
+                title="Select all pages"
+            >
+                All
+            </button>
+
+        </div>
+
+
+        <div
+            id="pageThumbnails"
+            class="page-thumbnails"
+        ></div>
+
+    </aside>
+
+
+    <!-- MAIN VIEW -->
+
+    <main class="main-editor">
+
+        <!-- EDITOR TOOLBAR -->
+
+        <div class="editor-toolbar">
+
+            <button
+                class="editor-tool active"
+                data-editor-tool="select"
+            >
+                <i class="fa-solid fa-arrow-pointer"></i>
+                Select
+            </button>
+
+            <button
+                class="editor-tool"
+                data-editor-tool="text"
+            >
+                <i class="fa-solid fa-font"></i>
+                Text
+            </button>
+
+            <button
+                class="editor-tool"
+                data-editor-tool="image"
+            >
+                <i class="fa-regular fa-image"></i>
+                Image
+            </button>
+
+            <button
+                class="editor-tool"
+                data-editor-tool="draw"
+            >
+                <i class="fa-solid fa-pen"></i>
+                Draw
+            </button>
+
+            <button
+                class="editor-tool"
+                data-editor-tool="sign"
+            >
+                <i class="fa-solid fa-signature"></i>
+                Sign
+            </button>
+
+            <div class="toolbar-separator"></div>
+
+            <button
+                id="deleteSelectedBtn"
+                class="editor-tool danger"
+            >
+                <i class="fa-solid fa-trash"></i>
+                Delete
+            </button>
+
+            <button
+                id="rotateLeftBtn"
+                class="icon-tool"
+                title="Rotate left"
+            >
+                <i class="fa-solid fa-rotate-left"></i>
+            </button>
+
+            <button
+                id="rotateRightBtn"
+                class="icon-tool"
+                title="Rotate right"
+            >
+                <i class="fa-solid fa-rotate-right"></i>
+            </button>
+
+            <div class="toolbar-separator"></div>
+
+            <button
+                id="moveUpBtn"
+                class="icon-tool"
+                title="Move page up"
+            >
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+
+            <button
+                id="moveDownBtn"
+                class="icon-tool"
+                title="Move page down"
+            >
+                <i class="fa-solid fa-arrow-down"></i>
+            </button>
+
+        </div>
+
+
+        <!-- VIEWER -->
+
+        <div
+            id="viewer"
+            class="pdf-viewer"
+        >
+
+            <div
+                id="viewerPages"
+                class="viewer-pages"
+            ></div>
+
+        </div>
+
+
+        <!-- BOTTOM BAR -->
+
+        <div class="editor-bottom">
+
+            <div class="page-navigation">
+
+                <button id="previousPageBtn">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <span>
+                    Page
+                    <strong id="currentPageNumber">
+                        1
+                    </strong>
+                    /
+                    <strong id="totalPageNumber">
+                        0
+                    </strong>
+                </span>
+
+                <button id="nextPageBtn">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+
+            <div
+                id="selectionStatus"
+                class="selection-status"
+            >
+                No page selected
+            </div>
+
+        </div>
+
+    </main>
+
+</section>
+
+
+<!-- =========================================================
+     MERGE SCREEN
+========================================================= -->
+
+<section
+    id="mergeScreen"
+    class="special-screen hidden"
+>
+
+    <div class="special-card">
+
+        <div class="special-icon">
+            <i class="fa-solid fa-layer-group"></i>
+        </div>
+
+        <h1>Merge PDF</h1>
+
+        <p>
+            Select multiple PDF files and combine them into one.
+        </p>
+
+        <label class="primary-upload-button">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Choose PDFs
+
+            <input
+                type="file"
+                id="mergeInput"
+                accept="application/pdf,.pdf"
+                multiple
+                hidden
+            >
+
+        </label>
+
+        <div
+            id="mergeFileList"
+            class="file-list"
+        ></div>
+
+        <button
+            id="mergeButton"
+            class="action-button hidden"
+        >
+            <i class="fa-solid fa-code-merge"></i>
+            Merge PDFs
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     IMAGE → PDF
+========================================================= -->
+
+<section
+    id="imagesPdfScreen"
+    class="special-screen hidden"
+>
+
+    <div class="special-card wide-card">
+
+        <div class="special-icon">
+            <i class="fa-regular fa-images"></i>
+        </div>
+
+        <h1>Images to PDF</h1>
+
+        <p>
+            Convert JPG, PNG and WebP images into a PDF.
+        </p>
+
+        <label class="primary-upload-button">
+
+            <i class="fa-solid fa-images"></i>
+
+            Choose Images
+
+            <input
+                type="file"
+                id="imagesPdfInput"
+                accept="image/jpeg,image/png,image/webp"
+                multiple
+                hidden
+            >
+
+        </label>
+
+        <div
+            id="imagePreviewGrid"
+            class="image-preview-grid"
+        ></div>
+
+        <button
+            id="imagesPdfButton"
+            class="action-button hidden"
+        >
+            <i class="fa-solid fa-file-pdf"></i>
+            Create PDF
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PDF → IMAGE
+========================================================= -->
+
+<section
+    id="pdfImagesScreen"
+    class="special-screen hidden"
+>
+
+    <div class="special-card wide-card">
+
+        <div class="special-icon">
+            <i class="fa-regular fa-file-image"></i>
+        </div>
+
+        <h1>PDF to Images</h1>
+
+        <p>
+            Convert every PDF page into a high-quality image.
+        </p>
+
+        <label class="primary-upload-button">
+
+            <i class="fa-solid fa-file-arrow-up"></i>
+
+            Choose PDF
+
+            <input
+                type="file"
+                id="pdfImagesInput"
+                accept="application/pdf,.pdf"
+                hidden
+            >
+
+        </label>
+
+        <div
+            id="pdfImageResults"
+            class="conversion-results"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     EXTRACT IMAGES
+========================================================= -->
+
+<section
+    id="extractImagesScreen"
+    class="special-screen hidden"
+>
+
+    <div class="special-card wide-card">
+
+        <div class="special-icon">
+            <i class="fa-regular fa-images"></i>
+        </div>
+
+        <h1>Extract Images from PDF</h1>
+
+        <p>
+            Find and extract embedded images from your PDF.
+        </p>
+
+        <label class="primary-upload-button">
+
+            <i class="fa-solid fa-file-arrow-up"></i>
+
+            Choose PDF
+
+            <input
+                type="file"
+                id="extractImagesInput"
+                accept="application/pdf,.pdf"
+                hidden
+            >
+
+        </label>
+
+        <div
+            id="extractedImagesResults"
+            class="extracted-grid"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INFO SCREEN
+========================================================= -->
+
+<section
+    id="infoScreen"
+    class="special-screen hidden"
+>
+
+    <div class="special-card wide-card">
+
+        <div class="special-icon">
+            <i class="fa-solid fa-circle-info"></i>
+        </div>
+
+        <h1>PDF Information</h1>
+
+        <p>
+            View useful information about your PDF.
+        </p>
+
+        <label class="primary-upload-button">
+
+            <i class="fa-solid fa-file-arrow-up"></i>
+
+            Choose PDF
+
+            <input
+                type="file"
+                id="infoInput"
+                accept="application/pdf,.pdf"
+                hidden
+            >
+
+        </label>
+
+        <div
+            id="infoResults"
+            class="info-grid"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     HIDDEN INPUTS
+========================================================= -->
+
+<input
+    type="file"
+    id="editorImageInput"
+    accept="image/jpeg,image/png,image/webp"
+    hidden
+>
+
+
+<!-- =========================================================
+     SIGNATURE MODAL
+========================================================= -->
+
+<div
+    id="signatureModal"
+    class="modal hidden"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <strong>
+                Draw your signature
+            </strong>
+
+            <button id="closeSignatureModal">
+                ×
+            </button>
+
+        </div>
+
+        <canvas
+            id="signatureCanvas"
+            width="600"
+            height="220"
+        ></canvas>
+
+        <div class="modal-actions">
+
+            <button
+                id="clearSignature"
+                class="secondary-button"
+            >
+                Clear
+            </button>
+
+            <button
+                id="useSignature"
+                class="action-button"
+            >
+                Use Signature
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TEXT MODAL
+========================================================= -->
+
+<div
+    id="textModal"
+    class="modal hidden"
+>
+
+    <div class="modal-card small-modal">
+
+        <div class="modal-header">
+
+            <strong>
+                Add Text
+            </strong>
+
+            <button id="closeTextModal">
+                ×
+            </button>
+
+        </div>
+
+        <textarea
+            id="textInput"
+            placeholder="Type your text..."
+        ></textarea>
+
+        <div class="modal-actions">
+
+            <button
+                id="cancelText"
+                class="secondary-button"
+            >
+                Cancel
+            </button>
+
+            <button
+                id="addText"
+                class="action-button"
+            >
+                Add Text
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     IMAGE OBJECT INPUT
+========================================================= -->
+
+<script type="module" src="tool.js"></script>
+
+</body>
+</html>
