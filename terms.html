@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Terms &amp; Conditions | A-PDF</title>
+  <meta name="description" content="Read the A-PDF Terms and Conditions for using our online PDF tools and services.">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f8fc;
+      color: #1f2937;
+      line-height: 1.7;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+    }
+
+
+    /* ================= HEADER ================= */
+
+    header {
+      height: 70px;
+
+      background: #ffffff;
+
+      border-bottom: 1px solid #e5e7eb;
+
+      display: flex;
+      align-items: center;
+
+      padding: 0 7%;
+
+      position: sticky;
+      top: 0;
+
+      z-index: 1000;
+
+      transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+
+    /* HOME */
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 8px;
+
+      text-decoration: none;
+
+      color: #374151;
+
+      font-size: 15px;
+      font-weight: 600;
+
+      transition: color 0.25s ease;
+    }
+
+    .back-btn:hover {
+      color: #2563eb;
+    }
+
+    .back-arrow {
+      font-size: 25px;
+
+      line-height: 1;
+
+      transition:
+        transform 0.25s ease;
+    }
+
+    .back-btn:hover .back-arrow {
+      transform: translateX(-4px);
+    }
+
+
+    /* LOGO */
+
+    .logo {
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 160px;
+      height: 50px;
+
+      text-decoration: none;
+    }
+
+    .logo img {
+      display: block;
+
+      width: auto;
+
+      height: 38px;
+
+      max-width: 150px;
+
+      object-fit: contain;
+    }
+
+
+    /* THEME BUTTON */
+
+    .theme-btn {
+      position: absolute;
+
+      right: 7%;
+
+      width: 42px;
+      height: 42px;
+
+      border: 1px solid #e5e7eb;
+
+      border-radius: 50%;
+
+      background: #ffffff;
+
+      color: #111827;
+
+      font-size: 20px;
+
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .theme-btn:hover {
+      transform: scale(1.06);
+    }
+
+
+    /* ================= HERO ================= */
+
+    .hero {
+      text-align: center;
+
+      padding: 70px 20px 45px;
+
+      background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff
+      );
+
+      transition: background 0.3s ease;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+
+      color: #111827;
+
+      margin-bottom: 12px;
+
+      transition: color 0.3s ease;
+    }
+
+    .hero p {
+      color: #6b7280;
+
+      font-size: 16px;
+    }
+
+
+    /* ================= CONTENT ================= */
+
+    .container {
+      max-width: 950px;
+
+      margin: 45px auto;
+
+      padding: 0 20px;
+    }
+
+    .terms-card {
+      background: #ffffff;
+
+      border: 1px solid #e5e7eb;
+
+      border-radius: 16px;
+
+      padding: 45px;
+
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.04);
+
+      transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+
+    /* INTRO */
+
+    .intro {
+      background: #eff6ff;
+
+      border-left: 4px solid #2563eb;
+
+      padding: 18px;
+
+      border-radius: 8px;
+
+      margin-bottom: 35px;
+
+      color: #374151;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+    }
+
+
+    /* SECTIONS */
+
+    section {
+      margin-bottom: 35px;
+    }
+
+    h2 {
+      font-size: 22px;
+
+      color: #111827;
+
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #4b5563;
+
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 22px;
+
+      color: #4b5563;
+
+      margin-bottom: 15px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      text-align: center;
+
+      padding: 30px 20px;
+
+      color: #6b7280;
+
+      font-size: 14px;
+
+      border-top: 1px solid #e5e7eb;
+
+      background: #ffffff;
+
+      transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    footer a {
+      color: #2563eb;
+
+      text-decoration: none;
+
+      font-weight: 600;
+    }
+
+
+    /* ================= DARK MODE ================= */
+
+    body.dark {
+      background: #0f172a;
+
+      color: #e5e7eb;
+    }
+
+    body.dark header {
+      background: #111827;
+
+      border-color: #1f2937;
+    }
+
+    body.dark .back-btn {
+      color: #e5e7eb;
+    }
+
+    body.dark .back-btn:hover {
+      color: #60a5fa;
+    }
+
+    body.dark .theme-btn {
+      background: #1f2937;
+
+      border-color: #374151;
+
+      color: #f9fafb;
+    }
+
+    body.dark .hero {
+      background: linear-gradient(
+        135deg,
+        #111827,
+        #0f172a
+      );
+    }
+
+    body.dark .hero h1 {
+      color: #f9fafb;
+    }
+
+    body.dark .hero p {
+      color: #9ca3af;
+    }
+
+    body.dark .terms-card {
+      background: #111827;
+
+      border-color: #1f2937;
+
+      box-shadow: none;
+    }
+
+    body.dark .intro {
+      background: #172554;
+
+      border-color: #3b82f6;
+
+      color: #dbeafe;
+    }
+
+    body.dark h2 {
+      color: #f9fafb;
+    }
+
+    body.dark p,
+    body.dark ul {
+      color: #cbd5e1;
+    }
+
+    body.dark footer {
+      background: #111827;
+
+      border-color: #1f2937;
+
+      color: #9ca3af;
+    }
+
+    body.dark footer a {
+      color: #60a5fa;
+    }
+
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 600px) {
+
+      header {
+        height: 64px;
+
+        padding: 0 18px;
+      }
+
+      .back-btn {
+        font-size: 14px;
+      }
+
+      .back-arrow {
+        font-size: 27px;
+      }
+
+      .back-text {
+        display: none;
+      }
+
+      .logo {
+        width: 130px;
+
+        height: 45px;
+      }
+
+      .logo img {
+        height: 34px;
+
+        max-width: 125px;
+      }
+
+      .theme-btn {
+        right: 18px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+      }
+
+      .hero {
+        padding: 50px 20px 35px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .container {
+        margin: 30px auto;
+
+        padding: 0 15px;
+      }
+
+      .terms-card {
+        padding: 25px 20px;
+
+        border-radius: 12px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+
+<!-- HOME -->
+
+<a href="index.html" class="back-btn">
+
+  <span class="back-arrow">←</span>
+
+  <span class="back-text">Home</span>
+
+</a>
+
+
+<!-- LOGO -->
+
+<a href="index.html" class="logo">
+
+  <img
+    src="logo.png"
+    alt="A-PDF Logo">
+
+</a>
+
+
+<!-- THEME -->
+
+<button
+  id="themeToggle"
+  class="theme-btn"
+  aria-label="Toggle dark mode"
+  title="Toggle theme">
+
+  ☾
+
+</button>
+
+
+  </header>
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+
+
+<h1>
+  Terms &amp; Conditions
+</h1>
+
+<p>
+  Last Updated: September 8, 2026
+</p>
+
+
+  </section>
+
+  <!-- ================= TERMS ================= -->
+
+  <main class="container">
+
+
+<div class="terms-card">
+
+
+  <div class="intro">
+
+    By using A-PDF, you agree to these Terms &amp; Conditions.
+    Please read them carefully before using our website and PDF tools.
+
+  </div>
+
+
+
+  <section>
+
+    <h2>1. Acceptance of Terms</h2>
+
+    <p>
+      Welcome to <strong>A-PDF</strong>. By accessing or using our
+      website, services, or PDF tools, you agree to comply with and
+      be bound by these Terms &amp; Conditions.
+    </p>
+
+    <p>
+      If you do not agree with these terms, please stop using A-PDF.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>2. Use of A-PDF</h2>
+
+    <p>
+      A-PDF provides online PDF-related tools and services intended
+      for legitimate personal, educational, and professional use.
+    </p>
+
+    <p>
+      You agree to use A-PDF only for lawful purposes and in a way
+      that does not interfere with the operation or security of
+      the website.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>3. User Responsibilities</h2>
+
+    <p>
+      When using A-PDF, you agree that you will not:
+    </p>
+
+    <ul>
+
+      <li>
+        Use the website for illegal or unauthorized purposes.
+      </li>
+
+      <li>
+        Upload, process, or distribute content that violates
+        applicable laws.
+      </li>
+
+      <li>
+        Upload files that infringe another person's copyright,
+        trademark, privacy, or other intellectual property rights.
+      </li>
+
+      <li>
+        Attempt to gain unauthorized access to our website,
+        servers, systems, or services.
+      </li>
+
+      <li>
+        Attempt to damage, disrupt, overload, or interfere with
+        the normal operation of A-PDF.
+      </li>
+
+      <li>
+        Use automated tools or scripts in a way that abuses or
+        overloads our services.
+      </li>
+
+    </ul>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>4. Your Files and Content</h2>
+
+    <p>
+      You are responsible for the documents and other content you
+      use with A-PDF.
+    </p>
+
+    <p>
+      You confirm that you have the necessary rights and permissions
+      to upload, edit, convert, compress, or otherwise process the
+      files you use with our tools.
+    </p>
+
+    <p>
+      A-PDF does not claim ownership of your personal documents.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>5. Intellectual Property</h2>
+
+    <p>
+      The A-PDF name, branding, logo, website design, original text,
+      graphics, software, and other original materials are protected
+      by applicable intellectual property laws.
+    </p>
+
+    <p>
+      You may not copy, reproduce, modify, distribute, sell, or
+      commercially exploit A-PDF's original materials without
+      appropriate authorization, except where permitted by law.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>6. Availability of Services</h2>
+
+    <p>
+      We work to keep A-PDF available and functional, but we do not
+      guarantee that the website or any particular tool will always
+      be available, uninterrupted, secure, or error-free.
+    </p>
+
+    <p>
+      Services may be temporarily unavailable because of maintenance,
+      updates, technical problems, network issues, or circumstances
+      beyond our reasonable control.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>7. Accuracy of Results</h2>
+
+    <p>
+      PDF processing tools are provided for convenience. Results may
+      vary depending on the structure, format, size, or content of
+      a document.
+    </p>
+
+    <p>
+      You should review important documents and generated files before
+      relying on them for legal, financial, business, academic, or
+      other important purposes.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>8. Backups</h2>
+
+    <p>
+      You are responsible for maintaining backups of important files.
+    </p>
+
+    <p>
+      Although we aim to provide reliable services, A-PDF cannot
+      guarantee that files or processing results will never be lost,
+      corrupted, or unavailable.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>9. Third-Party Services and Links</h2>
+
+    <p>
+      A-PDF may use third-party services or contain links to external
+      websites.
+    </p>
+
+    <p>
+      Third-party services operate under their own terms and privacy
+      policies. A-PDF is not responsible for the content, security,
+      availability, or practices of external websites and services.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>10. Advertising</h2>
+
+    <p>
+      A-PDF may display advertisements provided by third-party
+      advertising partners.
+    </p>
+
+    <p>
+      Interactions with advertisements or third-party promotional
+      content may be subject to the policies and terms of the
+      respective advertising provider.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>11. Disclaimer</h2>
+
+    <p>
+      A-PDF is provided on an "as is" and "as available" basis to the
+      maximum extent permitted by applicable law.
+    </p>
+
+    <p>
+      We make no guarantee that the website or its tools will meet
+      every user's specific requirements or that all processing will
+      be completely accurate or uninterrupted.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>12. Limitation of Liability</h2>
+
+    <p>
+      To the maximum extent permitted by applicable law, A-PDF and
+      its operators shall not be liable for losses or damages arising
+      from the use of, or inability to use, our website or services.
+    </p>
+
+    <p>
+      This may include, where legally permitted, loss of data,
+      business interruption, or other indirect or consequential
+      damages.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>13. Changes to These Terms</h2>
+
+    <p>
+      We may update or modify these Terms &amp; Conditions from time
+      to time.
+    </p>
+
+    <p>
+      Changes will be published on this page with an updated
+      "Last Updated" date.
+    </p>
+
+    <p>
+      Your continued use of A-PDF after changes are posted means that
+      you accept the revised terms.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>14. Termination</h2>
+
+    <p>
+      We reserve the right to restrict or terminate access to A-PDF
+      where reasonably necessary, including in cases of abuse,
+      unauthorized use, security concerns, or violation of these terms.
+    </p>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>15. Contact Us</h2>
+
+    <p>
+      If you have questions about these Terms &amp; Conditions or
+      A-PDF services, please contact us through the official A-PDF
+      website.
+    </p>
+
+  </section>
+
+
+</div>
+
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+
+© 2026 A-PDF. All rights reserved.
+
+&nbsp; | &nbsp;
+
+<a href="index.html">Home</a>
+
+&nbsp; | &nbsp;
+
+<a href="privacy-policy.html">
+  Privacy Policy
+</a>
+
+
+  </footer>
+
+  <!-- ================= THEME SCRIPT ================= -->
+
+  <script>
+
+    const themeToggle =
+      document.getElementById("themeToggle");
+
+
+    /* LOAD SAVED THEME */
+
+    const savedTheme =
+      localStorage.getItem("a-pdf-theme");
+
+
+    if (savedTheme === "dark") {
+
+      document.body.classList.add("dark");
+
+      themeToggle.textContent = "☀";
+
+    } else {
+
+      themeToggle.textContent = "☾";
+
+    }
+
+
+    /* TOGGLE THEME */
+
+    themeToggle.addEventListener("click", function () {
+
+      document.body.classList.toggle("dark");
+
+
+      const isDark =
+        document.body.classList.contains("dark");
+
+
+      if (isDark) {
+
+        themeToggle.textContent = "☀";
+
+        localStorage.setItem(
+          "a-pdf-theme",
+          "dark"
+        );
+
+      } else {
+
+        themeToggle.textContent = "☾";
+
+        localStorage.setItem(
+          "a-pdf-theme",
+          "light"
+        );
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
