@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Privacy Policy | A-PDF</title>
-  <meta name="description" content="Read the A-PDF Privacy Policy to understand how we handle your privacy and documents.">
+  <meta name="description" content="Read the A-PDF Privacy Policy to understand how we handle privacy, documents, and information.">
 
   <style>
     * {
@@ -15,11 +15,16 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #f7f8fc;
       color: #1f2937;
       line-height: 1.7;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     /* ================= HEADER ================= */
@@ -28,15 +33,20 @@
       height: 70px;
       background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
+
       display: flex;
       align-items: center;
+
       padding: 0 7%;
+
       position: sticky;
       top: 0;
       z-index: 1000;
+
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
 
-    /* HOME BUTTON */
+    /* HOME */
 
     .back-btn {
       display: inline-flex;
@@ -44,6 +54,7 @@
       gap: 8px;
 
       text-decoration: none;
+
       color: #374151;
 
       font-size: 15px;
@@ -68,10 +79,11 @@
     }
 
 
-    /* CENTER LOGO */
+    /* LOGO */
 
     .logo {
       position: absolute;
+
       left: 50%;
       top: 50%;
 
@@ -81,10 +93,10 @@
       align-items: center;
       justify-content: center;
 
-      text-decoration: none;
-
       width: 160px;
       height: 50px;
+
+      text-decoration: none;
     }
 
     .logo img {
@@ -96,6 +108,43 @@
       max-width: 150px;
 
       object-fit: contain;
+    }
+
+
+    /* THEME BUTTON */
+
+    .theme-btn {
+      position: absolute;
+
+      right: 7%;
+
+      width: 42px;
+      height: 42px;
+
+      border: 1px solid #e5e7eb;
+
+      border-radius: 50%;
+
+      background: #ffffff;
+      color: #111827;
+
+      font-size: 20px;
+
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .theme-btn:hover {
+      transform: scale(1.06);
     }
 
 
@@ -111,6 +160,8 @@
         #eff6ff,
         #ffffff
       );
+
+      transition: background 0.3s ease;
     }
 
     .hero h1 {
@@ -119,6 +170,8 @@
       color: #111827;
 
       margin-bottom: 12px;
+
+      transition: color 0.3s ease;
     }
 
     .hero p {
@@ -149,10 +202,14 @@
 
       box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.04);
+
+      transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
     }
 
 
-    /* INTRO BOX */
+    /* INTRO */
 
     .intro {
       background: #eff6ff;
@@ -166,10 +223,14 @@
       margin-bottom: 35px;
 
       color: #374151;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
     }
 
 
-    /* SECTIONS */
+    /* TEXT */
 
     section {
       margin-bottom: 35px;
@@ -222,6 +283,10 @@
       border-top: 1px solid #e5e7eb;
 
       background: #ffffff;
+
+      transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
     }
 
     footer a {
@@ -233,13 +298,90 @@
     }
 
 
+    /* ================= DARK MODE ================= */
+
+    body.dark {
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    body.dark header {
+      background: #111827;
+      border-color: #1f2937;
+    }
+
+    body.dark .back-btn {
+      color: #e5e7eb;
+    }
+
+    body.dark .back-btn:hover {
+      color: #60a5fa;
+    }
+
+    body.dark .theme-btn {
+      background: #1f2937;
+      border-color: #374151;
+      color: #f9fafb;
+    }
+
+    body.dark .hero {
+      background: linear-gradient(
+        135deg,
+        #111827,
+        #0f172a
+      );
+    }
+
+    body.dark .hero h1 {
+      color: #f9fafb;
+    }
+
+    body.dark .hero p {
+      color: #9ca3af;
+    }
+
+    body.dark .policy-card {
+      background: #111827;
+      border-color: #1f2937;
+      box-shadow: none;
+    }
+
+    body.dark .intro {
+      background: #172554;
+      border-color: #3b82f6;
+      color: #dbeafe;
+    }
+
+    body.dark h2 {
+      color: #f9fafb;
+    }
+
+    body.dark p,
+    body.dark ul {
+      color: #cbd5e1;
+    }
+
+    body.dark .highlight {
+      color: #60a5fa;
+    }
+
+    body.dark footer {
+      background: #111827;
+      border-color: #1f2937;
+      color: #9ca3af;
+    }
+
+    body.dark footer a {
+      color: #60a5fa;
+    }
+
+
     /* ================= MOBILE ================= */
 
     @media (max-width: 600px) {
 
       header {
         height: 64px;
-
         padding: 0 18px;
       }
 
@@ -251,14 +393,9 @@
         font-size: 27px;
       }
 
-      /* Hide Home text on small screens */
-
       .back-text {
         display: none;
       }
-
-
-      /* MOBILE LOGO */
 
       .logo {
         width: 130px;
@@ -267,12 +404,17 @@
 
       .logo img {
         height: 34px;
-
         max-width: 125px;
       }
 
+      .theme-btn {
+        right: 18px;
 
-      /* HERO */
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+      }
 
       .hero {
         padding: 50px 20px 35px;
@@ -282,18 +424,13 @@
         font-size: 34px;
       }
 
-
-      /* CONTENT */
-
       .container {
         margin: 30px auto;
-
         padding: 0 15px;
       }
 
       .policy-card {
         padding: 25px 20px;
-
         border-radius: 12px;
       }
 
@@ -301,7 +438,6 @@
         font-size: 20px;
       }
     }
-
   </style>
 
 </head>
@@ -313,27 +449,24 @@
   <header>
 
 
-<!-- HOME -->
-
 <a href="index.html" class="back-btn">
-
   <span class="back-arrow">←</span>
-
   <span class="back-text">Home</span>
-
 </a>
 
-
-<!-- LOGO -->
 
 <a href="index.html" class="logo">
-
-  <img
-    src="logo.png"
-    alt="A-PDF Logo"
-  >
-
+  <img src="logo.png" alt="A-PDF Logo">
 </a>
+
+
+<button
+  id="themeToggle"
+  class="theme-btn"
+  aria-label="Toggle dark mode"
+  title="Toggle theme">
+  ☾
+</button>
 
 
   </header>
@@ -361,16 +494,12 @@
 
 
   <div class="intro">
-
     Your privacy is important to us. This Privacy Policy explains how
     A-PDF handles information when you use our website and PDF tools.
-
   </div>
 
 
-
   <section>
-
     <h2>1. Introduction</h2>
 
     <p>
@@ -383,13 +512,10 @@
       By accessing or using A-PDF, you agree to the practices described
       in this Privacy Policy.
     </p>
-
   </section>
 
 
-
   <section>
-
     <h2>2. Your Files and Documents</h2>
 
     <p>
@@ -409,13 +535,10 @@
       personal documents to any online service unless they understand
       and accept the associated risks.
     </p>
-
   </section>
 
 
-
   <section>
-
     <h2>3. Information We May Collect</h2>
 
     <p>
@@ -424,32 +547,22 @@
     </p>
 
     <ul>
-
       <li>Browser type and version</li>
-
       <li>Device type</li>
-
       <li>Operating system</li>
-
       <li>Pages visited</li>
-
       <li>General usage and performance information</li>
-
       <li>Anonymous analytics data</li>
-
     </ul>
 
     <p>
       This information may be used to improve the performance, security,
       functionality, and user experience of A-PDF.
     </p>
-
   </section>
 
 
-
   <section>
-
     <h2>4. Cookies</h2>
 
     <p>
@@ -463,13 +576,10 @@
       some features of the website may not function correctly if cookies
       are disabled.
     </p>
-
   </section>
 
 
-
   <section>
-
     <h2>5. Third-Party Services</h2>
 
     <p>
@@ -483,13 +593,10 @@
       own privacy policies. A-PDF does not control the privacy practices
       of external websites or services.
     </p>
-
   </section>
 
 
-
   <section>
-
     <h2>6. Advertising</h2>
 
     <p>
@@ -503,13 +610,10 @@
       advertising providers for more information about how they handle
       data.
     </p>
-
   </section>
 
 
-
   <section>
-
     <h2>7. Data Security</h2>
 
     <p>
@@ -522,13 +626,10 @@
       storage is completely secure. Therefore, we cannot guarantee
       absolute security.
     </p>
-
   </section>
 
 
-
   <section>
-
     <h2>8. Children's Privacy</h2>
 
     <p>
@@ -541,13 +642,10 @@
       through our website, please contact us so appropriate action can
       be taken.
     </p>
-
   </section>
 
 
-
   <section>
-
     <h2>9. External Links</h2>
 
     <p>
@@ -555,13 +653,10 @@
       A-PDF, we are not responsible for the privacy practices, content,
       or security of third-party websites.
     </p>
-
   </section>
 
 
-
   <section>
-
     <h2>10. Changes to This Privacy Policy</h2>
 
     <p>
@@ -573,13 +668,10 @@
       Any updates will be posted on this page with a revised
       "Last Updated" date.
     </p>
-
   </section>
 
 
-
   <section>
-
     <h2>11. Contact Us</h2>
 
     <p>
@@ -587,7 +679,6 @@
       privacy practices of A-PDF, please contact us through our official
       website.
     </p>
-
   </section>
 
 
@@ -600,13 +691,81 @@
 
   <footer>
 
+
 © 2026 A-PDF. All rights reserved.
 
 &nbsp; | &nbsp;
 
 <a href="index.html">Home</a>
 
+&nbsp; | &nbsp;
+
+<a href="terms.html">Terms &amp; Conditions</a>
+
+
   </footer>
+
+  <!-- ================= THEME SCRIPT ================= -->
+
+  <script>
+
+    const themeToggle =
+      document.getElementById("themeToggle");
+
+
+    /* LOAD SAVED THEME */
+
+    const savedTheme =
+      localStorage.getItem("a-pdf-theme");
+
+
+    if (savedTheme === "dark") {
+
+      document.body.classList.add("dark");
+
+      themeToggle.textContent = "☀";
+
+    } else {
+
+      themeToggle.textContent = "☾";
+
+    }
+
+
+    /* TOGGLE */
+
+    themeToggle.addEventListener("click", function () {
+
+      document.body.classList.toggle("dark");
+
+
+      const isDark =
+        document.body.classList.contains("dark");
+
+
+      if (isDark) {
+
+        themeToggle.textContent = "☀";
+
+        localStorage.setItem(
+          "a-pdf-theme",
+          "dark"
+        );
+
+      } else {
+
+        themeToggle.textContent = "☾";
+
+        localStorage.setItem(
+          "a-pdf-theme",
+          "light"
+        );
+
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
